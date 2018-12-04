@@ -12,7 +12,6 @@ client.on('message', message => {
         const attachment = new Attachment('https://i.imgur.com/TKHOATK.jpg');
         // Send the attachment in the message channel with a content
         message.channel.send(`${message.author},`, attachment);
-        message.channel.send(`${message.channel.id},`);
     }
 });
 
