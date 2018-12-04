@@ -1,3 +1,3 @@
 # cantina-discord-bot
 
-Just a discord that I made for fun :D
+Just a discord bot that I made for fun :D
