@@ -18,8 +18,9 @@ client.on('message', message => {
         .then((resp) => resp.json())
         .then(function(data) {
             let quote = data.quote;
+            let author = data.author;
 
-            message.channel.send(`${message.author}, ${quote}`);
+            message.channel.send(`${message.author}, "${quote}" - ${author}`);
         });
     }
 });
