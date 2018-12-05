@@ -18,7 +18,7 @@ client.on('message', message => {
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
                if (xmlhttp.status == 200) {
-                    message.channel.send(`${message.author}, ${xmlhttp.responseText}`);
+                    message.channel.send(message.author + ', ' + xmlhttp.responseText);
                }
             }
         };
