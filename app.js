@@ -13,13 +13,18 @@ client.on('message', message => {
         // Send the attachment in the message channel with a content
         message.channel.send(`${message.author},`, attachment);
     } else if (message.content === '!random') {
-        fetch('http://quotes.stormconsultancy.co.uk/random.json', {
-            method: 'get'
-        }).then(function(response) {
-            message.channel.send(`${message.author}, ${response.quote}`);
-        }).catch(function(err) {
-            message.channel.send(err);
-        });
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+               if (xmlhttp.status == 200) {
+                    message.channel.send(`${message.author}, ${xmlhttp.responseText}`);
+               }
+            }
+        };
+    
+        xmlhttp.open("GET", "http://quotes.stormconsultancy.co.uk/random.json", true);
+        xmlhttp.send();
     }
 });
 
