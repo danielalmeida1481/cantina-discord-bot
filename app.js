@@ -1,7 +1,7 @@
 const { Client, Attachment } = require('discord.js');
 
 const client = new Client();
-const teste = "teste";
+let teste = "teste";
 
 client.on('ready', () => {
   console.log('I am ready!');
@@ -14,6 +14,11 @@ client.on('message', message => {
         // Send the attachment in the message channel with a content
         message.channel.send(`${message.author},`, attachment);
     } else if (message.content === '!random') {
+
+        fetch('http://example.com/movies.json')
+        .then(function(response) {
+            teste = "teste2"
+        });
         message.channel.send(`${message.author}, this is a ${teste}`);
     }
 });
