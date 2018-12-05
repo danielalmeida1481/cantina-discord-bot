@@ -1,7 +1,7 @@
 const { Client, Attachment } = require('discord.js');
+const fetch = require('node-fetch');
 
 const client = new Client();
-let teste = "teste";
 
 client.on('ready', () => {
   console.log('I am ready!');
@@ -14,7 +14,12 @@ client.on('message', message => {
         // Send the attachment in the message channel with a content
         message.channel.send(`${message.author},`, attachment);
     } else if (message.content === '!random') {
-        message.channel.send(`${message.author}, this is a ${teste}`);
+        fetch('http://example.com/movies.json')
+        .then(function(response) {
+            const quote = response;
+
+            message.channel.send(`${message.author}, ${quote}`);
+        });
     }
 });
 
