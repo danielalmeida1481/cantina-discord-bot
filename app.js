@@ -22,6 +22,14 @@ client.on('message', message => {
 
             message.channel.send(`${message.author}, "${quote}" - ${author}`);
         });
+    } else if (message.content === '!chuckjoke') {
+        fetch('https://api.icndb.com/jokes/random')
+        .then((resp) => resp.json())
+        .then(function(data) {
+            let joke = data.value.joke;
+
+            message.channel.send(`${message.author}, ${joke}`);
+        });
     }
 });
 
