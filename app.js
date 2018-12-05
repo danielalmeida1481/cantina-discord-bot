@@ -39,7 +39,7 @@ client.on('message', message => {
             message.channel.send(`${message.author}, ${joke}`);
         });
     } else if (message.content === 'roll a dice') {
-        message.channel.send(`${message.author}, ${Dice.roll()}`);
+        message.channel.send(`${message.author}, ${Dice.roll}`);
     }
 });
 
