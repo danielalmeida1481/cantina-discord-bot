@@ -13,10 +13,10 @@ client.on('message', message => {
         const attachment = new Attachment('https://i1.wp.com/www.ondevamosjantar.com/wp-content/uploads/2015/05/cantina-lx-lx-factory-alcantara-lisboa-restaurante-grupos.jpg');
         // Send the attachment in the message channel with a content
         message.channel.send(`${message.author},`, attachment);
-    } else if (message.content === '!random') {
-        fetch('http://example.com/movies.json')
+    } else if (message.content === '!rquote') {
+        fetch('http://quotes.stormconsultancy.co.uk/random.json')
         .then(function(response) {
-            let quote = response;
+            let quote = response.quote;
 
             message.channel.send(`${message.author}, ${quote}`);
         });
