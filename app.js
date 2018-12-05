@@ -16,7 +16,7 @@ client.on('message', message => {
     } else if (message.content === '!random') {
         fetch('http://example.com/movies.json')
         .then(function(response) {
-            const quote = response;
+            let quote = response;
 
             message.channel.send(`${message.author}, ${quote}`);
         });
