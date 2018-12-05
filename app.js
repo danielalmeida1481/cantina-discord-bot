@@ -16,7 +16,7 @@ client.on('message', message => {
     } else if (message.content === '!rquote') {
         fetch('http://quotes.stormconsultancy.co.uk/random.json')
         .then(function(response) {
-            let quote = response.quote;
+            let quote = response['quote'];
 
             message.channel.send(`${message.author}, ${quote}`);
         });
