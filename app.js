@@ -3,6 +3,14 @@ const fetch = require('node-fetch');
 
 const client = new Client();
 
+let Dice = {
+    sides: 6,
+    roll: () => {
+        let rnumber = Math.floor(Math.random() * this.sides) + 1;
+        return rnumber;
+    }
+}
+
 client.on('ready', () => {
   console.log('I am ready!');
 });
@@ -30,6 +38,8 @@ client.on('message', message => {
 
             message.channel.send(`${message.author}, ${joke}`);
         });
+    } else if (message.content === 'roll a dice') {
+        message.channel.send(`${message.author}, ${Dice.roll()}`);
     }
 });
 
