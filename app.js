@@ -18,7 +18,7 @@ client.on('message', message => {
         }).then(function(response) {
             message.channel.send(`${message.author}, ${response.quote}`);
         }).catch(function(err) {
-            
+            message.channel.send(err);
         });
     }
 });
