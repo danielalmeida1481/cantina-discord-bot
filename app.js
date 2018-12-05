@@ -1,6 +1,7 @@
 const { Client, Attachment } = require('discord.js');
 
 const client = new Client();
+const teste = "teste";
 
 client.on('ready', () => {
   console.log('I am ready!');
@@ -13,18 +14,7 @@ client.on('message', message => {
         // Send the attachment in the message channel with a content
         message.channel.send(`${message.author},`, attachment);
     } else if (message.content === '!random') {
-        var xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-               if (xmlhttp.status == 200) {
-                    message.channel.send(xmlhttp.responseText);
-               }
-            }
-        };
-    
-        xmlhttp.open("GET", "http://quotes.stormconsultancy.co.uk/random.json", true);
-        xmlhttp.send();
+        message.channel.send(`${message.author}, this is a ${teste}`);
     }
 });
 
